@@ -1,0 +1,9 @@
+feature,my_relevance_ranking,my_evidence,data_science_decision,agreement
+previous_no_shows,High,No-show rate 55.4% (had prior no-show) vs 43.5% (none); compounds with lead time,"Kept (p ≈ 0, strong t-test result); also engineered into prior_no_show_rate",Full agreement
+booking_lead_days,High,No-show rate 27.8% (0-7 days) to 60.5% (31-60 days); strongest single predictor; consistent across all appointment types,"Kept (p ≈ 0, strongest predictor in her model too)",Full agreement
+reminder_channel,Medium,"No-show rate varies 45.8%-51.4% by channel; effect depends on lead time, not a fixed ranking","Kept (chi-square significant, p < 0.05)",Full agreement on inclusion; new insight (lead-time interaction) not yet tested in her model
+distance_to_clinic_km,Medium,"No-show rate 46.5% (0-5km) to 54.1% (15+km); moderate, consistent effect","Kept (t-test significant, p < 0.05)",Full agreement
+appointment_type,Low,No-show rate varies 46.6%-51.2%; some variation but not a strong standalone predictor,"Kept (chi-square significant, though closer to 0.05 cutoff)",Full agreement
+waiting_time_minutes,Low,No-show rate flat (~47-49%) across all bands; weak relationship,Dropped (t-test not significant),Full agreement
+age_group,Very Low,No-show rate varies only 45.1%-50.7%; minimal variation across groups,Dropped (chi-square not significant),Full agreement
+gender,Very Low,No-show rate nearly identical (48.4% vs 48.7%) between genders,Dropped (chi-square not significant; also an ethical concern re: demographic predictors),Full agreement

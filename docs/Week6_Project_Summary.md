@@ -28,16 +28,17 @@ Produced a validated Feature Relevance Summary intended for direct use by the Da
 
 ## 5. Track(s) Collaborated With
 
-Data Science.
+Data Science (a real exchange with a Data Science intern working on the HealthConnect no-show prediction model).
 
 ## 6. What Was Exchanged
 
-**Received (conceptually, from the shared Week 4/5 Data Science track requirements):** Their target variable (`appointment_outcome`) and candidate feature list.
-**Provided:** A ranked, evidence-backed Feature Relevance Summary (`DataScience_Feature_Relevance_Summary.csv`) with specific modeling recommendations for each feature.
+**Received:** Her actual Week 5 baseline model results - a Logistic Regression model achieving 63% accuracy, 62% recall, and 0.68 ROC-AUC, built using booking_lead_days, previous_no_shows, prior_no_show_rate, distance_to_clinic_km, appointment_type, reminder_sent, and reminder_channel. She specifically asked what strongest pattern from my analysis she hadn't tested yet.
+
+**Provided:** Two specific, evidence-backed interaction-feature recommendations not currently in her model: (1) a lead-time × prior-no-show interaction (no-show rate compounds from 21.8% to 67.9% depending on the combination), and (2) a reminder-channel × lead-time interaction (her model treats reminder_channel independently, but its effectiveness changes depending on booking lead time - SMS is not universally best).
 
 ## 7. What Changed as a Result
 
-The Data Science track now has a concrete, prioritized feature list rather than a general set of candidate variables, including a specific insight that `reminder_channel` should be modeled as an interaction with `booking_lead_days` rather than as a standalone feature.
+Reviewing her actual notebook confirmed that my independent, descriptive-analysis approach and her formal statistical testing (t-tests and chi-square tests) reached full agreement on every candidate feature's relevance - a genuine cross-validation of both analyses. Beyond that agreement, she now has two specific, testable feature-engineering ideas to try against her existing 62% recall baseline, which she had not identified through her own testing.
 
 ## 8. Key Findings or Development Outcomes
 
