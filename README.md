@@ -1,76 +1,17 @@
-# Week 6 Project Summary - Data Analytics Track
+# HealthConnect Clinic — Data Analytics Track
 
-## AnalystLab Africa Experience Lab | HealthConnect Clinic Project
+## AnalystLab Africa Experience Lab Internship Programme
 
-## 1. What I Planned to Accomplish
+This repository contains my Week 4, Week 5, and Week 6 submissions for the HealthConnect Clinic Experience Lab, part of the AnalystLab Africa internship programme.
 
-Building on Week 5's initial EDA, KPIs, and insights, my goal for Week 6 was to deepen and validate the strongest findings, check whether any Week 5 conclusions needed revision, and produce a concrete cross-track deliverable for the Data Science track.
+## Project Background
 
-## 2. What I Completed
+HealthConnect Clinic is a fictional healthcare provider facing a high rate of missed patient appointments. The central project question is:
 
-- Investigated whether booking lead time and prior no-show history compound when combined, rather than treating them as separate factors.
-- Validated the reliability of the lead-time finding by checking it held consistently across all four appointment types.
-- Validated the reminder-channel finding by checking it held consistently across lead-time bands.
-- Produced an evidence-based Feature Relevance Summary ranking 8 candidate variables for predictive value.
-- Exported this summary as a standalone file for the Data Science track.
-- Refined business recommendations based on the deeper analysis.
-- Updated the limitations section to reflect what was resolved, revised, and newly discovered.
+> **How can HealthConnect Clinic use data and AI to reduce missed appointments and improve the patient support experience?**
 
-## 3. What I Improved from Week 5
+As part of the Data Analytics track, my role is to explore the appointment dataset, calculate and validate meaningful KPIs, and produce insights and evidence-based recommendations that support HealthConnect's decision-making — including findings that feed directly into the Data Science track's modeling work.
 
-- Moved from single-factor analysis to combined risk-factor analysis (lead time × prior no-show history).
-- Validated that key findings were not artifacts of one segment, but held consistently across appointment types.
-- Revised an overly broad Week 5 conclusion (SMS as universally best) into a more accurate, lead-time-dependent recommendation.
-
-## 4. What I Integrated
-
-Produced a validated Feature Relevance Summary intended for direct use by the Data Science track in their Week 6 feature refinement process, based on the deeper validation analysis conducted this week.
-
-## 5. Track(s) Collaborated With
-
-Data Science.
-
-## 6. What Was Exchanged
-
-**Received (conceptually, from the shared Week 4/5 Data Science track requirements):** Their target variable (`appointment_outcome`) and candidate feature list.
-**Provided:** A ranked, evidence-backed Feature Relevance Summary (`DataScience_Feature_Relevance_Summary.csv`) with specific modeling recommendations for each feature.
-
-## 7. What Changed as a Result
-
-The Data Science track now has a concrete, prioritized feature list rather than a general set of candidate variables, including a specific insight that `reminder_channel` should be modeled as an interaction with `booking_lead_days` rather than as a standalone feature.
-
-## 8. Key Findings or Development Outcomes
-
-- Lead time and prior no-show history compound: no-show rate ranges from 21.8% (lowest risk) to 67.9% (highest risk) depending on the combination.
-- The lead-time effect is consistent across all appointment types, confirming it as a reliable, general pattern.
-- The reminder-channel effect is not uniform - Email outperforms SMS for short-notice appointments, contradicting the Week 5 blanket recommendation.
-
-## 9. Major Challenges
-
-Deciding how to represent "cross-track integration" honestly, given I am working as an individual intern rather than paired with a live Data Science collaborator. Resolved by treating the shared, documented Data Science track requirements as the integration input, and producing a genuinely usable artifact as the output.
-
-## 10. Important Decisions Made
-
-- Chose to focus deeper analysis on only the two strongest Week 5 predictors (lead time, prior no-show history) rather than re-examining all six relationships, to keep the analysis focused and avoid repeating Week 5.
-- Decided to explicitly revise the Week 5 reminder-channel conclusion rather than leave the outdated blanket recommendation standing, since the brief asks to review whether Week 5 conclusions need revision.
-
-## 11. Remaining Issues
-
-- All findings remain correlational, not causal - no controlled testing has been done.
-- Dataset still lacks socioeconomic, insurance, and clinical-severity data.
-- The revised reminder-channel finding should also be shared with the Generative AI track, since any assistant guidance mentioning reminder channels would currently be inaccurate.
-
-## 12. Contribution to the Overall HealthConnect Project
-
-Provided the Data Science track with a validated, evidence-backed feature prioritization that is more reliable than a general candidate list, directly supporting more efficient and accurate model development in their Week 6 work.
-
-## 13. Proposed Focus for Week 7
-
-- Support testing of the Data Science track's model using the validated features identified here, if their results are available for review.
-- Explore whether a simple combined risk score (lead time + prior no-show) could be formalized into a specific scoring formula the clinic could use operationally.
-- Communicate the revised reminder-channel finding to the Generative AI track if relevant to their assistant's content.
-
----
 ## Repository Structure
 ```text
 ├── data/
@@ -105,10 +46,13 @@ Provided the Data Science track with a validated, evidence-backed feature priori
 - Built 5 visualizations and produced 5 business insights.
 
 ## Week 6 Progress
+## Week 6 Progress
 - Investigated whether the two strongest Week 5 predictors (booking lead time, prior no-show history) compound when combined - confirmed they do (no-show rate ranges from 21.8% to 67.9% depending on the combination).
 - Validated the lead-time finding for consistency across all appointment types.
 - Validated and **revised** the Week 5 reminder-channel conclusion - SMS is not universally best; effectiveness depends on lead time.
-- Produced a validated Feature Relevance Summary as a cross-track integration deliverable for the Data Science track.
+- Collaborated directly with a Data Science intern: reviewed her actual Week 5 baseline model (Logistic Regression, 63% accuracy, 62% recall, 0.68 ROC-AUC) and provided two specific, evidence-backed interaction-feature recommendations not yet in her model.
+- Cross-validated my feature relevance findings against her independent statistical testing (t-tests, chi-square) - found full agreement across every candidate feature.
+- Produced a validated Feature Relevance Summary, updated to include this cross-validation, as a cross-track integration deliverable.
 - Refined business recommendations based on the deeper analysis.
 
 ## Key Findings (Updated Through Week 6)
@@ -125,7 +69,7 @@ Provided the Data Science track with a validated, evidence-backed feature priori
 
 ## Cross-Track Integration
 
-Week 6 produced `docs/DataScience_Feature_Relevance_Summary.csv` - a validated, ranked feature list with supporting evidence, intended for direct use by the Data Science track's model feature selection process.
+Week 6 involved a real exchange with a Data Science intern building the HealthConnect no-show prediction model. After reviewing her actual baseline results, I provided two specific interaction-feature recommendations (lead-time × prior-no-show, and reminder-channel × lead-time) that were not yet tested in her model. This is documented in `docs/DataScience_Feature_Relevance_Summary.csv` and in the Week 6 notebook.
 
 ## Next Steps (Week 7)
 
